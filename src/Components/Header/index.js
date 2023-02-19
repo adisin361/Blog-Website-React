@@ -7,9 +7,9 @@ const Header = () => {
         <p className='main-heading'>The Artifact</p>
         <p className='sub-heading'><em>Culture & Art blog</em></p>
         <div className='nav-bar'>
-          <a href="">Blog</a>
-          <a href="">About</a>
-          <a href="">Contact</a>
+          <a href="#blog">Blog</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </>

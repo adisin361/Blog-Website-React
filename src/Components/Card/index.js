@@ -3,12 +3,17 @@ import './style.css';
 import clapSrc from '../../Assets/Icons/clapping.svg';
 import heartSrc from '../../Assets/Icons/heart-black.svg';
 import heartLikedSrc from '../../Assets/Icons/heart-red.svg';
+import clappedSrc from '../../Assets/Icons/clapped.svg';
 const Card = (props) => {
   const imageSrc = require(`../../Assets/Images/${props.image}`);
-  const [isLiked, setIsLiked] = React.useState(!props.liked);
-
+  const [isLiked, setIsLiked] = React.useState(props.liked);
+  const [isClapped, setIsClapped] = React.useState(true);
   const handleLike = () => {
     setIsLiked(!isLiked);
+  }
+
+  const handleClap = () => {
+    setIsClapped(!isClapped);
   }
 
   return (
@@ -32,12 +37,10 @@ const Card = (props) => {
             <center><hr></hr></center>
             <div className='reaction'>
               <div className='clap'>
-                <img src={clapSrc} alt='clapIcon' />
-                <p>{props.claps}</p>
+                <img src={isClapped ? clapSrc : clappedSrc} alt='clapIcon' onClick={handleClap} />
+                <p>{isClapped ? props.claps : props.claps + 1}</p>
               </div>
-              {isLiked ? <img src={heartSrc} alt='heartIcon' onClick={handleLike} /> :
-                <img src={heartLikedSrc} alt='heartLikedIcon' onClick={handleLike} />}
-
+              <img src={isLiked ? heartLikedSrc : heartSrc} alt='heartIcon' onClick={handleLike} />
             </div>
           </div>
 
