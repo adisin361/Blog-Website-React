@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="main-footer"
+  >
+    <p>
+      ©artifact.com 2019
+    </p>
+  </div>
+</DocumentFragment>
+`;
