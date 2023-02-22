@@ -47,7 +47,7 @@ const Card = ({ blogData }) => {
 
   return (
     <>
-      <div className='card'>
+      <div className='card' data-testid='blog-post'>
         <div className='image'>
           <img src={blogData.image} alt='abstract' />
         </div>
